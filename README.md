@@ -1,1 +1,91 @@
-# bora-sair
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite Especial 🎨</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #fef6e4, #fcd5ce);
+    padding: 20px;
+  }
+  h1 {
+    color: #6d6875;
+    font-size: 2.2em;
+  }
+  p {
+    font-size: 18px;
+    color: #4a4e69;
+  }
+  button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  #sim {
+    background-color: #8ac926;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  }
+  #sim:hover {
+    background-color: #74b816;
+    transform: scale(1.05);
+  }
+  #nao {
+    background-color: #f77f00;
+    color: white;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  }
+  #resposta {
+    display:none; 
+    font-size:20px; 
+    color:#222; 
+    margin-top:20px; 
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <h1>🎨 Convite Especial 🎨</h1>
+  <p>Oi! Você está oficialmente convidada para ir comigo na <strong>Exposição Leonardo da Vinci</strong> em São Paulo,<br>
+  no <strong>domingo, 17 de agosto</strong>.<br><br>
+  Aceita esse convite cultural? 😏</p>
+  <div>
+    <button id="sim">Sim 😁</button>
+    <button id="nao">Não</button>
+  </div>
+  <p id="resposta"></p>
+
+<script>
+  const btnSim = document.getElementById("sim");
+  const btnNao = document.getElementById("nao");
+  const resposta = document.getElementById("resposta");
+
+  btnSim.addEventListener("click", () => {
+    resposta.innerHTML = "Sabia que você ia aceitar 😎 Vai ser incrível ver as obras do Da Vinci com você!";
+    resposta.style.display = "block";
+  });
+
+  btnNao.addEventListener("mouseover", () => {
+    const x = Math.floor(Math.random() * 300) - 150;
+    const y = Math.floor(Math.random() * 300) - 150;
+    btnNao.style.transform = `translate(${x}px, ${y}px)`;
+  });
+</script>
+</body>
+</html>
